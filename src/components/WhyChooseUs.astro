@@ -2,103 +2,62 @@
 import { cn } from "@utils/utils";
 
 // Styles
-const whyChoose = "text-center py-[clamp(3.75rem,7.82vw,6.25rem)] px-4";
+const whyChoose = "relative overflow-hidden sm:py-[clamp(3.75rem,7.82vw,6.25rem)] px-4";
 const container =
-  "w-full max-w-[34.375rem] m-auto flex flex-col items-center gap-[clamp(3rem,6vw,4rem)] sm:max-w-[80rem]";
+"w-full max-w-[80rem] m-auto flex flex-col items-center gap-[clamp(3rem,7vw,4rem)]"
+const picture = "block relative w-full h-[18.75rem] sm:h-full sm:w-1/2 sm:left-1/2 sm:right-auto sm:absolute sm:bottom-0 sm:z-[-1] sm:before:content-[''] sm:before:w-[21.875rem] sm:before:bg-white sm:before:dark:bg-dark sm:before:[clip-path:polygon(0_0,73%_0,42%_100%,0_100%)] sm:before:opacity-100 sm:before:block sm:before:absolute sm:before:top-[-0.125rem] sm:before:bottom-[-0.125rem] sm:before:left-[-0.125rem] sm:before:right-auto sm:before:z-[10]"
+// const picture = "block relative w-full h-[18.75rem] sm:h-full sm:w-1/2 sm:left-1/2 sm:right-auto sm:absolute sm:bottom-0 sm:z-[-1] sm:before:content-[''] sm:before:w-[21.875rem]  sm:before:[clip-path:polygon(0_0,73%_0,42%_100%,0_100%)] sm:before:opacity-100 sm:before:block sm:before:absolute sm:before:top-[-0.125rem] sm:before:bottom-[-0.125rem] sm:before:left-[-0.125rem] sm:before:right-auto sm:before:z-[10] md:w-[18.75rem]"
+const img = "absolute top-0 left-0 h-full w-full object-cover"
 const content =
-  "text-left w-full flex flex-col items-start sm:flex-row sm:justify-between sm:items-end sm:gap-[4rem]";
-const flex = "sm:w-6/12";
+  "text-left w-full flex flex-col items-start max-w-[39.375rem] mr-auto pb-[clamp(3.75rem,7.82vw,6.25rem)] px-4 pt-0 box-border sm:w-3/5 sm:p-0";
 const topper =
-  "text-[clamp(0.8125rem,1.6vw,1rem)] leading-[1.2em] uppercase tracking-widest font-bold text-primary dark:text-primaryLight mb-1 block";
+  "text-[clamp(0.8125rem,1.6vw,1rem)] leading-[1.2em] uppercase tracking-widest font-bold text-primary mb-1 block dark:text-primaryLight mb-1 block";
 const title =
-  "text-[clamp(1.9375rem,3.9vw,3.0625rem)] font-black leading-[1.2em] max-w-[43.75rem] mb-4 text-headerColor dark:text-bodyTextColorWhite relative sm:m-0";
+  "text-[clamp(1.9375rem,3.9vw,3.0625rem)] font-black leading-[1.2em] max-w-[43.75rem] mb-8 text-headerColor relative dark:text-bodyTextColorWhite relative";
 const titleUnderline =
   "before:content-[''] before:absolute before:block before:h-[0.0625em] before:w-[1.515em] before:bg-secondary before:opacity-100 before:bottom-[-0.3em] before:left-1/2 before:transform before:-translate-x-1/2";
 const text =
-  "text-base leading-[1.5em] w-full max-w-[32.625rem] m-0 text-bodyTextColor dark:text-bodyTextColorWhite";
-const cardGroup =
-  "w-full m-0 p-0 flex justify-center items-center flex-col gap-4 sm:justify-between sm:items-stretch sm:flex-row sm:gap-[gap: clamp(1rem,1.5vw,1.25rem)]";
-const item =
-  "list-none text-left w-full p-8 bg-[#f7f7f7] dark:bg-accent rounded-2xl box-border transform transition-colors duration-300 hover:bg-primary dark:hover:bg-primary hover:cursor-pointer group sm:w-auto sm:py-8 sm:px-[clamp(1rem,2.1vw,2rem)]";
-const icon =
-  "group-hover:grayscale group-hover:brightness-200 dark:group-hover:brightness-[1000%] dark:grayscale dark:brightness-[1000%] w-auto h-[3rem] mb-6 block transition-all duration-300";
-const h3 =
-  "group-hover:text-bodyTextColorWhite text-[clamp(1.25rem,2.5vw,1.5625rem)] leading-[1.2em] m-0 mb-4 text-headerColor dark:text-bodyTextColorWhite transition-colors duration-300";
-const itemText =
-  "group-hover:text-bodyTextColorWhite text-base leading-[1.5em] m-0 text-bodyTextColor dark:text-bodyTextColorWhite transition-colors duration-300";
+  "text-base leading-[1.5em] w-full max-w-[40.625rem] mb-4 [&:last-of-type]:mb-8 text-bodyTextColor dark:text-bodyTextColorWhite";
+const ul = "p-0 m-0 sm:columns-2 max-w-[34.375rem]"
+const li = "list-none text-xl leading-[1.5em] font-bold mb-2 text-headerColor dark:text-bodyTextColorWhite flex justify-start items-center"
+const icon = "mr-4"
+const button = "text-base leading-[clamp(2.875rem,5.5vw,3.5rem)] no-underline font-bold text-center mt-8 text-white min-w-[9.375rem] px-[1.5rem] bg-primary rounded inline-block relative z-[1] box-border"
+const buttonBefore = "before:content-[''] before:absolute before:h-full before:w-0 before:bg-black before:opacity-100 before:top-0 before:left-0 before:z-[-1] before:rounded before:transform before:transition-all before:duration-300 before:hover:w-full"
 ---
 
-<section id="why-choose-289" class={cn(whyChoose)}>
+<section id="why-choose-37" class={cn(whyChoose)}>
   <div class={cn(container)}>
-    <div class={cn(content)}>
-      <div class={cn(flex)}>
-        <span class={cn(topper)}>Our Process</span>
-        <h2 class={cn(title, titleUnderline)}>
-          Why You Need the Top Lawyers in O’Connor
-        </h2>
+      <!-- Right Image -->
+      <picture class={cn(picture, "picture")}>
+          <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/lightbulb-m.jpg">
+          <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/lightbulb.jpg">
+          <img class={cn(img)} aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/lightbulb.jpg" alt="lightbulbs on a wire" width="858" height="781">
+      </picture>
+      <div class={cn(content)}>
+          <span class={cn(topper)}>Why Choose Us</span>
+          <h2 class={cn(title, titleUnderline)}>Et orci volutpat, back up generator installations</h2>
+          <p class={cn(text)}>
+              Facilisis condimentum viverra scelerisque ac morbi sit sed. Turpis sagittis in blandit eleifend tortor ullamcorper eu placerat. Et orci felis volutpat, etiam vitae egestas volutpat pulvinar. 
+          </p>
+          <ul class={cn(ul)}>
+              <li class={cn(li)}>
+                  <img class={cn(icon)} aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/yellow-check.svg" alt="checkmark" width="27" height="27">
+                  Clean Work
+              </li>
+              <li class={cn(li)}>
+                  <img class={cn(icon)} aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/yellow-check.svg" alt="checkmark" width="27" height="27">
+                  Attention To Detail
+              </li>
+              <li class={cn(li)}>
+                  <img class={cn(icon)} aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/yellow-check.svg" alt="checkmark" width="27" height="27">
+                  Punctual
+              </li>
+              <li class={cn(li)}>
+                  <img class={cn(icon)} aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/yellow-check.svg" alt="checkmark" width="27" height="27">
+                  Quality Guaranteed
+              </li>
+          </ul>
+          <a href="" class={cn(button, buttonBefore)}>Request A Quote Today</a>
       </div>
-      <p class={cn(text)}>
-        We’re a financial and consulting business company of professional
-        thinkers, strategists, digital innovators, designers and problem solvers
-        (everyone gets a mention). Our sense of curiosity brings brands to life,
-        gets them talking, and makes sure they’re heard above.
-      </p>
-    </div>
-    <ul class={cn(cardGroup)}>
-      <li class={cn(item)}>
-        <img
-          class={cn(icon)}
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/award.svg"
-          alt="icon"
-          width="48"
-          height="48"
-        />
-        <h3 class={cn(h3)}>99% winning guarantee</h3>
-        <p class={cn(itemText)}>
-          Full range of shipping disputes such as charter party disputes,
-          demurrage claims, purchase agreements, trade finance, carriage and
-          claims.
-        </p>
-      </li>
-      <li class={cn(item)}>
-        <img
-          class={cn(icon)}
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/sheild-black.svg"
-          alt="icon"
-          width="40"
-          height="48"
-        />
-        <h3 class={cn(h3)}>Secure management</h3>
-        <p class={cn(itemText)}>
-          Full range of shipping disputes such as charter party disputes,
-          demurrage claims, purchase agreements, trade finance, carriage and
-          claims.
-        </p>
-      </li>
-      <li class={cn(item)}>
-        <img
-          class={cn(icon)}
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Why-Choose/call.svg"
-          alt="icon"
-          width="48"
-          height="48"
-        />
-        <h3 class={cn(h3)}>Full time support</h3>
-        <p class={cn(itemText)}>
-          Full range of shipping disputes such as charter party disputes,
-          demurrage claims, purchase agreements, trade finance, carriage and
-          claims.
-        </p>
-      </li>
-    </ul>
   </div>
 </section>
