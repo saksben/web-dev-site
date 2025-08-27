@@ -6,7 +6,7 @@ import NavFloating1Li from "./nav-floating-1-li.astro";
 import NavFloating1Social from "./nav-floating-1-social.astro";
 import client from "@data/client.json"
 import navData from "@data/navData";
-import { Facebook1A, Instagram1A, LogoBasicSvg, Twitter1A, Youtube1A } from "@assets/index";
+import { Facebook1A, Instagram1A, LogoFullSvg, Twitter1A, Youtube1A } from "@assets/index";
 
 interface Props {}
 
@@ -17,7 +17,7 @@ const {} = Astro.props;
 
 <NavFloating1
   logoHref="/"
-  logoSrc={LogoBasicSvg.src}
+  logoSrc={LogoFullSvg.src}
   phone={client.phoneFormatted}
   phoneHref={client.phoneForTel}
   variant="top"

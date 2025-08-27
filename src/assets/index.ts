@@ -4,6 +4,7 @@ import CompPhoneDark from "./images/web-dev/comp-phone-dark.webp";
 import Computer from "./images/web-dev/computer.webp";
 import Laptop2 from "./images/web-dev/laptop2.webp";
 import LogoBasic from "./images/web-dev/logo-basic.webp";
+import LogoFull from "./images/web-dev/logo-full.webp";
 import Matrix from "./images/web-dev/matrix.webp";
 import WorkAtDesk from "./images/web-dev/work-at-desk.webp";
 import Working from "./images/web-dev/working.webp";
@@ -30,6 +31,7 @@ import LifebuoyGold from "./icons/Lifebuoy-gold.svg";
 import Like from "./icons/Like.svg";
 import LikeGold from "./icons/Like-gold.svg";
 import LogoBasicSvg from "./icons/logo-basic.svg";
+import LogoFullSvg from "./icons/logo-full.svg";
 import Mechanic from "./icons/mechanic1.svg";
 import Mechanic2 from "./icons/mechanic2.svg";
 import MechEmail from "./icons/mech-email.svg";
@@ -51,6 +53,7 @@ export {
   Computer,
   Laptop2,
   LogoBasic,
+  LogoFull,
   Matrix,
   WorkAtDesk,
   Working,
@@ -77,6 +80,7 @@ export {
   Like,
   LikeGold,
   LogoBasicSvg,
+  LogoFullSvg,
   Mechanic,
   Mechanic2,
   MechEmail,

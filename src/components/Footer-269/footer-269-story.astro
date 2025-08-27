@@ -6,7 +6,7 @@ import Footer269Contact from "./footer-269-contact.astro";
 import Footer269Social from "./footer-269-social.astro";
 import client from "@data/client.json"
 import Footer1390Link from "./footer-1390-link.astro";
-import { Facebook, Google, Instagram, LogoBasic } from "@assets/index";
+import { Facebook, Google, Instagram, LogoFull } from "@assets/index";
 
 interface Props {}
 
@@ -16,7 +16,7 @@ const {} = Astro.props;
 ---
 
 <Footer269
-  logoSrc={LogoBasic.src}
+  logoSrc={LogoFull.src}
   text="Web design and development experts in the Phoenix area"
 >
   <Footer269Li href="/" text="Home" slot="li" />
