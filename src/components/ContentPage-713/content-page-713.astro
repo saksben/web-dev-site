@@ -19,7 +19,7 @@ interface Props {
 
 const {
   src,
-  alt,
+  alt = "",
   height = "680",
   width = "570",
   graphicBottom,
@@ -53,6 +53,46 @@ const bgImg =
     <Content className={cn(content, "content")}>
       <slot />
     </Content>
+    {
+      src && (
+        <div class={cn(imageGroup)}>
+          <Picture
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className={cn(picture)}
+            imgClassName={cn(img)}
+          />
+          {/* Flower Graphic */}
+          {graphicBottom && (
+            <img
+              class={cn(bottom)}
+              loading="lazy"
+              decoding="async"
+              src={graphicBottom}
+              alt="graphic"
+              width="362"
+              height="350"
+              aria-hidden="true"
+            />
+          )}
+          {/* Spidey Sense Graphic */}
+          {graphicTop && (
+            <img
+              class={cn(top)}
+              loading="lazy"
+              decoding="async"
+              src={graphicTop}
+              alt="graphic"
+              width="80"
+              height="89"
+              aria-hidden="true"
+            />
+          )}
+        </div>
+      )
+    }
   </Container>
 
   <style>
